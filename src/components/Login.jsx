@@ -49,7 +49,7 @@ const Login = () => {
       <div className="login-form">
         <div className="form-header">
           <div className="logo-container">
-            <img src="/BDTS-modified.png" alt="BDTS Logo" className="logo" />
+            <img src="/assets/BDTS-modified.png" alt="BDTS Logo" className="logo" />
           </div>
           <h2>Basel Dynamic Tech Solutions</h2>
           <p>Employee HRMS Portal</p>
