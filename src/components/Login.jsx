@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginWithTiming } from '../utils/api';
+import Loading from './Loading';
 import './Login.css';
 
 const Login = () => {
@@ -39,10 +40,17 @@ const Login = () => {
     }
   };
 
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="login-container">
       <div className="login-form">
         <div className="form-header">
+          <div className="logo-container">
+            <img src="src/assets/BDTS-modified.png" alt="BDTS Logo" className="logo" />
+          </div>
           <h2>Basel Dynamic Tech Solutions</h2>
           <p>Employee HRMS Portal</p>
         </div>

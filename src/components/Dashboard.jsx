@@ -259,6 +259,9 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      <footer>
+        © 2025 Basel Dynamic Tech Solutions Pvt Ltd. All Rights Reserved.
+      </footer>
     </div>
   );
 };

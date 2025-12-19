@@ -18,6 +18,8 @@ const AdminTimings = () => {
         apiCall({ action: 'getAllTimings' }),
         apiCall({ action: 'getAllLoginTimings' })
       ]);
+      console.log('Punch Response:', punchResponse);
+      console.log('Login Response:', loginResponse);
       setPunchTimings(punchResponse.timings || []);
       setLoginTimings(loginResponse.timings || []);
     } catch (error) {
@@ -35,43 +37,47 @@ const AdminTimings = () => {
       {loading ? (
         <div className="loading">Loading timings...</div>
       ) : (
-        <>
-          <h4>Login Timings</h4>
-          <div className="timings-list">
-            {loginTimings.length === 0 ? (
-              <div className="no-data">No login data available</div>
-            ) : (
-              loginTimings.map((timing, index) => (
-                <div key={index} className="timing-card">
-                  <div className="employee-name">{timing.name} ({timing.empId})</div>
-                  <div className="timing-details">
-                    <span>Login: {timing.loginTime || 'N/A'}</span>
-                    <span>Logout: {timing.logoutTime || 'N/A'}</span>
-                    <span>Total: {timing.totalTime || '0h'}</span>
+        <div className="timings-grid">
+          <div className="timing-section">
+            <h4>1. Login Timings</h4>
+            <div className="timings-list">
+              {loginTimings.length === 0 ? (
+                <div className="no-data">No login data available</div>
+              ) : (
+                loginTimings.map((timing, index) => (
+                  <div key={index} className="timing-card">
+                    <div className="employee-name">{timing.name} ({timing.empId})</div>
+                    <div className="timing-details">
+                      <span>Login: {timing.loginTime || 'N/A'}</span>
+                      <span>Logout: {timing.logoutTime || 'N/A'}</span>
+                      <span>Total: {timing.totalTime || '0h'}</span>
+                    </div>
                   </div>
-                </div>
-              ))
-            )}
+                ))
+              )}
+            </div>
           </div>
           
-          <h4>Punch Timings</h4>
-          <div className="timings-list">
-            {punchTimings.length === 0 ? (
-              <div className="no-data">No punch data available</div>
-            ) : (
-              punchTimings.map((timing, index) => (
-                <div key={index} className="timing-card">
-                  <div className="employee-name">{timing.name} ({timing.empId})</div>
-                  <div className="timing-details">
-                    <span>In: {timing.punchIn || 'N/A'}</span>
-                    <span>Out: {timing.punchOut || 'N/A'}</span>
-                    <span>Total: {timing.totalHours || '0h'}</span>
+          <div className="timing-section">
+            <h4>2. Punch Timings</h4>
+            <div className="timings-list">
+              {punchTimings.length === 0 ? (
+                <div className="no-data">No punch data available</div>
+              ) : (
+                punchTimings.map((timing, index) => (
+                  <div key={index} className="timing-card">
+                    <div className="employee-name">{timing.name} ({timing.empId})</div>
+                    <div className="timing-details">
+                      <span>In: {timing.punchIn || 'N/A'}</span>
+                      <span>Out: {timing.punchOut || 'N/A'}</span>
+                      <span>Total: {timing.totalHours || '0h'}</span>
+                    </div>
                   </div>
-                </div>
-              ))
-            )}
+                ))
+              )}
+            </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

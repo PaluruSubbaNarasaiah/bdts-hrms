@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { apiCall } from '../utils/api';
 import AdminTimings from './AdminTimings';
 import Navbar from './Navbar';
+import './Admin.css';
 
 const Admin = () => {
   const [empId, setEmpId] = useState('');
@@ -162,6 +163,9 @@ const Admin = () => {
           </div>
         </div>
       </div>
+      <footer>
+        © 2025 Basel Dynamic Tech Solutions Pvt Ltd. All Rights Reserved.
+      </footer>
     </div>
   );
 };

@@ -316,6 +316,33 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.timings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.timing-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timing-section h4 {
+  color: #7aa2ff;
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .timings-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
 .timings-list {
   max-height: 300px;
   overflow-y: auto;
@@ -561,6 +588,28 @@ body.light .theme-toggle {
   background: rgba(0, 0, 0, 0.1) !important;
   border: 1px solid rgba(0, 0, 0, 0.2) !important;
   color: #1e293b !important;
+}
+
+/* Footer Styles */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.95);
+  color: #ffffff;
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 999;
+  height: 40px;
+}
+
+body.light footer {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #1e293b !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Light Theme */

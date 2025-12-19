@@ -1,0 +1,46 @@
+/* Admin Dashboard Styles */
+.admin {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+.admin-layout {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  align-items: flex-start;
+  margin-top: 0;
+  min-height: calc(100vh - 160px);
+  flex: 1;
+}
+
+.admin-main {
+  width: 65%;
+  min-height: auto;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+
+.admin-side {
+  width: 35%;
+  min-height: auto;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+  
+  .admin-main, .admin-side {
+    width: 100%;
+    max-height: none;
+  }
+}
