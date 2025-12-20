@@ -220,7 +220,7 @@ button:disabled {
   margin: 0;
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: #667eea;
 }
 
 @keyframes fadeSlide {
