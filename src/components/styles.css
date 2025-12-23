@@ -451,6 +451,7 @@
 .leave-info {
   flex: 1;
   font-size: 0.9em; /* Smaller font size */
+  color: #fff;
 }
 
 .leave-actions {
@@ -664,7 +665,8 @@ body.light .no-data,
 body.light .loading,
 body.light .leave-dates,
 body.light .message,
-body.light .weekday {
+body.light .weekday,
+body.light .leave-info {
   color: #1e293b !important;
 }
 
