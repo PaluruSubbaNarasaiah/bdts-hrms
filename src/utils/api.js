@@ -1,7 +1,24 @@
 import { API_URL } from '../config.js';
 
+let networkErrorCallback = null;
+
+export const setNetworkErrorCallback = (callback) => {
+  networkErrorCallback = callback;
+};
+
 const handleApiError = (error) => {
   console.error('API Error:', error);
+  
+  if (!navigator.onLine) {
+    if (networkErrorCallback) {
+      networkErrorCallback('No internet connection. Please check your network.');
+    }
+    throw new Error('No internet connection');
+  }
+  
+  if (networkErrorCallback) {
+    networkErrorCallback('Network error occurred. Please try again.');
+  }
   throw new Error('Network error occurred');
 };
 
